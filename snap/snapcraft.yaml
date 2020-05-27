@@ -1,0 +1,33 @@
+name: cybot-james
+version: '1.0'
+summary: ROS teleoperation for cybot built upon CamJam Edukit #3
+description: |
+  A ROS system for teleoperation of the CamJam Edukit #3. This is the final
+  part of the series "Your First Robot with ROS" by Kyle Fazzari.
+
+  Note that the 'joystick' interface is needed to access the gamepad and 
+  the 'physical-memory-control' interface is needed for access to GPIO.
+  Both of these interfaces must be connected before the snap will function.
+
+    $ sudo snap connect cybot-james:joystick
+    $ sudo snap connect cybot-james:physical-memory-control
+
+grade: stable
+confinement: strict
+
+parts:
+  workspace:
+    # See 'snapcraft plugins'
+    plugin: catkin
+    rosdistro: kinetic
+    source: .
+    catkin-packages: [edukit_bot]
+
+    # required to build RPi.GPIO
+    build-packages: [python-dev, python-setuptools]
+
+apps: 
+  launch:
+    command: roslaunch edukit_bot edukit_bot.launch
+    daemon: simple
+    plugs: [network, network-bind, joystick, gpio-memory-control]
