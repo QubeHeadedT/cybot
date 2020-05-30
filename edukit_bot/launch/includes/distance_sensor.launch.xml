@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="<name>" type="ROS_sonar_sensor.py" name="ROS_sonar_sensor" />
+</launch>
