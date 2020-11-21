@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>edukit_bot</name>
+  <name>cybot</name>
   <version>0.1.0</version>
-  <description>The edukit_bot package</description>
+  <description>The cybot package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

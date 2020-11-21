@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find cybot)/launch/includes/teleop.launch.xml" />
+  <include file="$(find cybot)/launch/includes/control.launch.xml" />
+  <include file="$(find cybot)/launch/includes/distance_sensor.launch.xml" />
+</launch>
